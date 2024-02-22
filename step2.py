@@ -3,14 +3,19 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import tensorflow as tf
 
-
-model = keras.Sequential([
+model_argument = keras.Sequential([
+	layers.Dense(32, activation = "relu", input_shape=[8]),
+	layers.Dense(32, activation = "relu"),
+	layers.Dense(1) 
+])
+model_activation_layer = keras.Sequential([
     layers.Dense(32, input_shape=[8]),
     layers.Activation('relu'),
     layers.Dense(32),
     layers.Activation('relu'),
     layers.Dense(1),
 ])
+
 activation_layer = layers.Activation('swish')
 
 x = tf.linspace(-3.0, 3.0, 100)
