@@ -100,7 +100,7 @@ model.compile(
 )
 
 # Feed the optimizer 128 rows of the training data at a time
-model.fit(X,y,validation_data=(X,y), batch_size=128, epochs=50)
+model.fit(X,y, batch_size=128, epochs=50)
 history_df = pd.DataFrame(history.history)
 # Start the plot at epoch 5. You can change this to get a different view.
 history_df.loc[5:, ['loss']].plot();
